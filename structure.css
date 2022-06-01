@@ -1,0 +1,185 @@
+:root {
+  --container-width: 72rem;
+  --space: 16px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #000;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+header {
+  background-color: rgb(49, 126, 194);
+  min-height: 5rem;
+}
+
+footer {
+  background-color: hsl(2, 100%, 94%);
+}
+
+.container {
+  border: 1px solid #98569f;
+  width: 95vw;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 986px) {
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: var(--space);
+  }
+
+  /** header section **/
+
+  header {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+  }
+
+  .logo {
+    height: 100%;
+    grid-column: 4 / span 2;
+    text-align: center;
+    background-color: rgb(141, 59, 173);
+  }
+
+  .main-nav {
+    grid-row-start: 1;
+    grid-column: 1 / span 3;
+    background-color: rgb(141, 122, 173);
+  }
+
+  .main-nav > ul {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav > ul > li {
+    margin-right: var(--space);
+  }
+
+  .secondary-nav {
+    grid-row-start: 1;
+    grid-column: 6 / span 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: rgb(148, 173, 59);
+    
+  }
+
+  .secondary-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .user-menu {
+    padding: 0 var(--space);
+  }
+
+  .secondary-nav ul.social-menu {
+    background-color: pink;
+    display: flex;
+    margin-right: var(--space);
+  }
+
+  .social-menu li {
+    padding-right: calc(var(--space) / 2);
+  }
+
+  .basket-menu {
+    background-color: #98569f;
+    height: 4em;
+    margin: 0;
+    padding-bottom: 0.1em;
+    background-color: transparent;
+    background-image: url("bag_icon.png");
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .basket-menu button {
+    background-color: transparent;
+    border: none;
+    padding-top: 1em;
+  }
+
+  /** main section **/
+
+  .banner {
+    background-color: rgb(176, 176, 176);
+    min-height: 20rem;
+  }
+
+  .products {
+    margin-top: var(--space);
+    grid-gap: var(--space);
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: span 8;
+    background-color: rgb(171, 169, 173);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product {
+    border: 1px solid violet;
+  }
+
+  .products header {
+    grid-column: 1 / span 8;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .instagram {
+    grid-row-start: 2;
+    grid-column: 1 / span 8;
+    background-color: rgb(208, 208, 208);
+  }
+
+  .newsletter {
+    background-color: rgb(180, 180, 180);
+    grid-column-start: 1;
+    grid-column-end: span 8;
+    grid-row-start: 3;
+  }
+}
